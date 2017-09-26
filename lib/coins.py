@@ -977,16 +977,16 @@ class Denarius(Coin):
     NET = "mainnet"
     XPUB_VERBYTES = bytes.fromhex("0488b21e")
     XPRV_VERBYTES = bytes.fromhex("0488ade4")
-    P2PKH_VERBYTE = bytes.fromhex("1E")
+    P2PKH_VERBYTE = bytes.fromhex("1E") #Address starts with a D
     P2SH_VERBYTES = [bytes.fromhex("5A")]
-    WIF_BYTE = bytes.fromhex("80")
+    WIF_BYTE = bytes.fromhex("9E") #WIF starts with a 6
     GENESIS_HASH = ('00000d5dbbda01621cfc16bbc1f9bf32'
                     '64d641a5dbf0de89fd0182c2c4828fcd')
     DESERIALIZER = DeserializerTxTime
     DAEMON = daemon.LegacyRPCDaemon
     ESTIMATE_FEE = 0.00001
     RELAY_FEE = 0.00001
-    DAEMON = daemon.FakeEstimateFeeDaemon
+    DAEMON = daemon.FakeEstimateFeeDaemon #Fees need better implementation still
     TX_COUNT = 1000
     TX_COUNT_HEIGHT = 10000
     TX_PER_BLOCK = 1
