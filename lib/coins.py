@@ -982,13 +982,12 @@ class Denarius(Coin):
     WIF_BYTE = bytes.fromhex("9E") #WIF starts with a 6
     GENESIS_HASH = ('00000d5dbbda01621cfc16bbc1f9bf32'
                     '64d641a5dbf0de89fd0182c2c4828fcd')
-    DESERIALIZER = DeserializerTxTime
-    DAEMON = daemon.LegacyRPCDaemon
     ESTIMATE_FEE = 0.00001
     RELAY_FEE = 0.00001
     DAEMON = daemon.FakeEstimateFeeDaemon #Fees need better implementation still
     TX_COUNT = 1000
     TX_COUNT_HEIGHT = 10000
+    REORG_LIMIT = 1000
     TX_PER_BLOCK = 1
     IRC_PREFIX = "DNR_"
     IRC_CHANNEL = "#electrum-dnr"
